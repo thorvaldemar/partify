@@ -1,0 +1,22 @@
+{
+    "name": "TADA",
+    "short_name": "TADA",
+    "description": "A sort of todo-list app",
+    "start_url": "/",
+    "display": "standalone",
+    "orientation": "any",
+    "background_color": "#F4F1DE",
+    "theme_color": "#E07A5F",
+    "icons": [
+      {
+        "src": "/assets/icon/logo192.png",
+        "sizes": "192x192",
+        "type": "image/png"
+      },
+      {
+        "src": "/assets/icon/logo512.png",
+        "sizes": "512x512",
+        "type": "image/png"
+      }
+    ]
+  }

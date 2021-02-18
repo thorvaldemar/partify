@@ -1,0 +1,13 @@
+USERS:
+    +------------------+--------------+------+-----+-----------------------------------------+-------+
+    | Field            | Type         | Null | Key | Default                                 | Extra |
+    +------------------+--------------+------+-----+-----------------------------------------+-------+
+    | uid              | int          | NO   |     | NULL                                    |       |
+    | username         | varchar(30)  | NO   |     | NULL                                    |       |
+    | password         | varchar(100) | NO   |     | NULL                                    |       |
+    | mail             | varchar(30)  | NO   |     | NULL                                    |       |
+    | avatar           | varchar(100) | NO   |     | http://partify.dk/assets/def_avatar.png |       |
+    | country          | varchar(2)   | NO   |     | EN                                      |       |
+    | spotifyConnected | tinyint(1)   | NO   |     | 0                                       |       |
+    | spotifyKey       | varchar(100) | YES  |     | NULL                                    |       |
+    +------------------+--------------+------+-----+-----------------------------------------+-------+

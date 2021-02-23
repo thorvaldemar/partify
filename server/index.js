@@ -93,6 +93,17 @@ router.post('/register/:username/:password/:mail/:country', (req, res) => {
     });
 });
 
+router.post('/getUserCountry', (req, res) => {
+    if (req.session.uid) {
+        con.query(`SELECT country FROM users WHERE uid=${req.session.uid}`, (err, resault, fields) => {
+            if (resault.length > 0) res.send({"country": resault[0]['country']});
+            else res.send({"country": 'EN'});
+        });
+    } else {
+        res.send({"country": req.headers['accept-language'].split(',')[0].split('-')[1]});
+    }
+});
+
 /**
  * Callback for checkpassword
  * @callback HashCallback

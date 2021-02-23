@@ -1,3 +1,32 @@
+const fallbackLanguage = "EN";
+
+var langpack = null;
+nodeCall('/getUserCountry', [], data => {
+    $.getJSON('/public/language.json', langs => {
+        console.log(data);
+        if (Object.keys(langs).includes(data.country.toUpperCase())) langpack = langs[data.country.toUpperCase()];
+        else langpack[fallbackLanguage.toUpperCase()];
+        updateLang();
+    });
+});
+
+(() => {
+    updateLang();
+    $('body').change(() => updateLang());
+});
+
+/**
+ * @ignore
+ */
+function updateLang() {
+    if (langpack) {
+        $('body [transcode]').each(function() {
+            if ($(this).is('input')) $(this).attr('placeholder', translate($(this).attr('transcode')));
+            else $(this).text(translate($(this).attr('transcode')));
+        });
+    }
+}
+
 /**
  * @callback nodeCallCallback
  * @param {Object} data the output of the request
@@ -27,4 +56,31 @@ function nodeCall(url, params, callback = (data) => {}, reqType = 'post', cbType
         default:
             throw Error(reqType + ' is not a valid nodeCall request type');
     }
+}
+
+
+/**
+ * @typedef LanguageObject
+ * @param {String} translation The translation
+ */
+
+/**
+ * @typedef LanguageObjects
+ * @param {String} transcode The code of the translation
+ * @param {String} translation The translation
+ */
+
+/**
+ * @typedef LanguagePack
+ * @param {Array<LanguageObjects>} translations All translations
+ */
+
+/**
+ * 
+ * @param {String} transcode The code of the string to translate
+ * @returns {LanguageObject|LanguagePack} Either returns LanguageObject if transcode is set else LanguagePack
+ */
+function translate(transcode = null) {
+    if (!transcode) return langpack;
+    return langpack[transcode];
 }

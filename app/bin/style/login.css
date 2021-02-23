@@ -1,5 +1,5 @@
 header {
-  background-color: #a8dadc;
+  background-color: var(--secondary);
   clip-path: url("#wave");
   height: 200px;
   width: 100%;
@@ -26,7 +26,6 @@ header h1 {
   top: 45%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: white;
   font-size: 46px;
   width: 100%;
   text-align: center;
@@ -41,11 +40,10 @@ header h1 {
 .actions ul {
   list-style: none;
   padding: 0;
-  color: white;
   display: flex;
   justify-content: space-between;
   width: 35%;
-  margin: 0 auto 20px;
+  margin: 0 auto 25px;
 }
 
 .actions ul li::after {
@@ -53,7 +51,7 @@ header h1 {
   position: absolute;
   width: 0;
   height: 2px;
-  background-color: white;
+  background-color: var(--white);
   bottom: -4px;
   transition: width 1s;
 }
@@ -73,7 +71,7 @@ header h1 {
   width: 0;
   height: 0;
   position: absolute;
-  overflow: hidden;
+  /* overflow: hidden; */
   opacity: 0;
   transition: width 1s, height 1s, opacity 800ms;
 }
@@ -82,3 +80,18 @@ header h1 {
 .actions form:nth-of-type(2) { left: 50%; transform: translateX(-50%); height: 275px; }
 .actions form:not(.selected) { height: 0; }
 .actions form.selected { width: 80%; opacity: 1; }
+
+.actions .signedup {
+  text-align: center;
+  color: #a8dadc;
+}
+
+.actions .signedup * {
+  margin: 0 0 5px;
+  padding: 0;
+}
+
+.actions .signedup a {
+  color: var(--aqua-light);
+  cursor: pointer;
+}

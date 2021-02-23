@@ -13,7 +13,7 @@
     <header class="shadow"></header>
     <header>
         <h1>
-            <span><img src="/assets/logos/Outer light.png" alt="Logo"></span>
+            <span><img src="/assets/logos/dark.png" alt="Logo"></span>
             Partify
         </h1>
     </header>
@@ -28,25 +28,29 @@
     
     <div class="actions">
         <ul>
-            <li class="selected" tabof="login">Sign in</li>
-            <li tabof="register">Sign up</li>
+            <li class="selected" tabof="login" transcode="sign-in">Sign in</li>
+            <li tabof="register" transcode="sign-up">Sign up</li>
         </ul>
         <form class="login selected">
-            <input type="text" id="username" name="username" placeholder="Username or email" required>
-            <input type="password" id="password" name="password" placeholder="Password" required>
-            <button type="submit">Login</button>
+            <input type="text" id="username" name="username" placeholder="Username or email" transcode="username" required>
+            <input type="password" id="password" name="password" placeholder="Password" transcode="password" required>
+            <button type="submit" transcode="sign-in">Sign in</button>
             <p class="form-error"></p>
         </form>
         <form class="register">
-            <input type="text" id="username" name="username" placeholder="Username" required>
-            <input type="password" id="password" name="password" placeholder="Password" required>
-            <input type="text" id="mail" name="email" placeholder="Email" required>
-            <select id="country" name="country" required>
-                <option value="" disabled selected>--Select a country--</option>
+            <input type="text" id="username" name="username" placeholder="Username" transcode="username" required>
+            <input type="password" id="password" name="password" placeholder="Password" transcode="password" required>
+            <input type="text" id="mail" name="email" placeholder="Email" transcode="mail" required>
+            <select id="country" name="country" transcode="country" required>
+                <option value="" disabled selected transcode="select-country">--Select a country--</option>
             </select>
-            <button type="submit">Sign up</button>
+            <button type="submit" transcode="sign-up">Sign up</button>
             <p class="form-error"></p>
         </form>
+        <div class="signedup" style="display: none;">
+            <p transcode="sign-up-success">You now have an account</p>
+            <a tabof="login" transcode="sign-in">Sign in</a>
+        </div>
     </div>
 </body>
 </html>

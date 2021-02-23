@@ -1,0 +1,22 @@
+{
+    "EN": {
+        "sign-in": "Sign in",
+        "sign-out": "Sign out",
+        "sign-up": "Sign up",
+        "username": "Username",
+        "password": "Password",
+        "mail": "Email",
+        "select-country": "Select a country",
+        "sign-up-success": "You now have an account!"
+    },
+    "DK": {
+        "sign-in": "Log ind",
+        "sign-out": "Log ud",
+        "sign-up": "Registrer",
+        "username": "Brugernavn",
+        "password": "Adgangskode",
+        "mail": "Email",
+        "select-country": "Vælg et land",
+        "sign-up-success": "Du har nu en konto!"
+    }
+}

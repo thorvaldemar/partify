@@ -1,16 +1,30 @@
+:root {
+    --primary: #252525;
+    --secondary: #6930c3;
+    --aqua-dark: #64dfdf;
+    --aqua-light: #80ffdb;
+    --red: #eb4747;
+    --white: #eee;
+    --white-disabled: #aaa;
+    --black: #222;
+    --black-disabled: #555;
+}
+
 body {
     font-family: 'Raleway', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #2a3642;
+    background-color: var(--primary);
+    color: var(--white);
 }
 
 form input, form select {
-    background-color: #394552;
+    background-color: var(--primary);
+    box-shadow: 1px 1px 5px #000000aa;
     border: none;
     padding: 10px 10px;
-    color: #d4d4d4;
-    border-radius: 3px;
+    color: var(--white);
+    border-radius: 5px;
     outline: none;
     width: 100%;
     margin: 0 0 15px;
@@ -18,11 +32,11 @@ form input, form select {
     -webkit-appearance: none;
 }
 
-form input::placeholder { color: #5e7287; }
+form input::placeholder { color: var(--white-disabled); }
 
-form select:invalid { color: #5e7287; }
-form select option { color: #d4d4d4; }
-form select option[disabled] { color: #5e7287; }
+form select:invalid { color: var(--white-disabled); }
+form select option { color: var(--white); }
+form select option[disabled] { color: var(--white-disabled); }
 
 form button[type="submit"] {
     border: none;
@@ -30,12 +44,12 @@ form button[type="submit"] {
     padding: 10px;
     width: 50%;
     border-radius: 5px;
-    color: white;
-    background-color: #a8dadc;
+    color: var(--white);
+    background-color: var(--secondary);
 }
 
 form .form-error {
-    color: #ff6347;
+    color: var(--red);
     text-align: center;
     font-size: 14px;
 }

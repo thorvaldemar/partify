@@ -1,0 +1,59 @@
+header {
+    background-color: var(--secondary);
+    clip-path: url("#wave");
+    height: 200px;
+    width: 100%;
+    position: relative;
+}
+
+header .profile {
+    width: fit-content;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+header .profile img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    box-shadow: 0 0 5px 0px #000000aa;
+}
+
+header .profile p {
+    margin: 0;
+}
+
+header.shadow {
+    background-color: #00000080;
+    clip-path: url("#wave");
+    height: 210px;
+    width: 100%;
+    position: absolute;
+    top: 0;
+}
+
+.actions {
+    position: absolute;
+    top: 50%;
+    width: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.actions button {
+    width: 100%;
+    margin: 0 0 25px;
+    padding: 15px 5px;
+    font-size: 16px;
+    color: var(--white);
+    background-color: var(--aqua-dark);
+    border: none;
+    outline: none;
+    border-radius: 6px;
+}
+
+.actions #host {
+    background-color: var(--red);
+}

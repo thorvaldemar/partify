@@ -10,6 +10,25 @@
     <script src="/js/home.js"></script>
 </head>
 <body>
-    <h1>Home Page</h1>
+    <header class="shadow"></header>
+    <header>
+        <div class="profile">
+            <img src="/assets/def_avatar.png" alt="Logo">
+            <p>thorvaldemar</p>
+        </div>
+    </header>
+    
+    <svg width="0" height="0">
+        <defs>
+            <clipPath id="wave" clipPathUnits="objectBoundingBox">
+                <path class="st0" d="M 0 0 V 1 C 0.4 0.6 0.7 1.15 1 0.8 V 0 Z" />
+            </clipPath>
+        </defs>
+    </svg>
+
+    <div class="actions">
+        <button id="join">Join party</button>
+        <button id="host">Host party</button>
+    </div>
 </body>
 </html>

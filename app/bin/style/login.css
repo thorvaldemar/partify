@@ -51,7 +51,7 @@ header h1 {
   position: absolute;
   width: 0;
   height: 2px;
-  background-color: var(--white);
+  background-color: var(--primary-fgrnd);
   bottom: -4px;
   transition: width 1s;
 }

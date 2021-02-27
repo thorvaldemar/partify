@@ -1,4 +1,8 @@
 const fallbackLanguage = "EN";
+const theme = () => {
+    if (!localStorage.getItem('theme')) localStorage.setItem('theme', 'dark');
+    return localStorage.getItem('theme');
+};
 
 var langpack = null;
 nodeCall('/getUserCountry', [], data => {
@@ -10,7 +14,8 @@ nodeCall('/getUserCountry', [], data => {
     });
 });
 
-(() => {
+$(() => {
+    $('body').attr('theme', theme());
     updateLang();
     $('body').change(() => updateLang());
 });

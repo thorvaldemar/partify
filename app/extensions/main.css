@@ -4,10 +4,34 @@
     --aqua-dark: #64dfdf;
     --aqua-light: #80ffdb;
     --red: #eb4747;
-    --white: #eee;
-    --white-disabled: #aaa;
-    --black: #222;
-    --black-disabled: #555;
+    --primary-fgrnd: #eee;
+    --primary-fgrnd-disabled: #aaa;
+    --secondary-fgrnd: #eee;
+    --secondary-fgrnd-disabled: #aaa;
+}
+
+body[theme="dark"] {
+    --primary: #252525;
+    --secondary: #6930c3;
+    --aqua-dark: #64dfdf;
+    --aqua-light: #80ffdb;
+    --red: #eb4747;
+    --primary-fgrnd: #eee;
+    --primary-fgrnd-disabled: #aaa;
+    --secondary-fgrnd: #eee;
+    --secondary-fgrnd-disabled: #aaa;
+}
+
+body[theme="light"] {
+    --primary: #EEEEEE;
+    --secondary: #E76F51;
+    --aqua-dark: #C86FC9;
+    --aqua-light: #2A9D8F;
+    --red: #eb4747;
+    --primary-fgrnd: #252525;
+    --primary-fgrnd-disabled: #555555;
+    --secondary-fgrnd: #eee;
+    --secondary-fgrnd-disabled: #aaa;
 }
 
 body {
@@ -15,7 +39,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: var(--primary);
-    color: var(--white);
+    color: var(--primary-fgrnd);
 }
 
 form input, form select {
@@ -23,7 +47,7 @@ form input, form select {
     box-shadow: 1px 1px 5px #000000aa;
     border: none;
     padding: 10px 10px;
-    color: var(--white);
+    color: var(--primary-fgrnd);
     border-radius: 5px;
     outline: none;
     width: 100%;
@@ -32,11 +56,11 @@ form input, form select {
     -webkit-appearance: none;
 }
 
-form input::placeholder { color: var(--white-disabled); }
+form input::placeholder { color: var(--primary-fgrnd-disabled); }
 
-form select:invalid { color: var(--white-disabled); }
-form select option { color: var(--white); }
-form select option[disabled] { color: var(--white-disabled); }
+form select:invalid { color: var(--primary-fgrnd-disabled); }
+form select option { color: var(--primary-fgrnd); }
+form select option[disabled] { color: var(--primary-fgrnd-disabled); }
 
 form button[type="submit"] {
     border: none;
@@ -44,7 +68,7 @@ form button[type="submit"] {
     padding: 10px;
     width: 50%;
     border-radius: 5px;
-    color: var(--white);
+    color: var(--secondary-fgrnd);
     background-color: var(--secondary);
 }
 

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Partify</title>
+    <script src="/extensions/head.js"></script>
+
+    <link rel="stylesheet" href="/style/profile.css">
+    <script src="/js/profile.js"></script>
+</head>
+<body>
+    <header class="shadow"></header>
+    <header>
+        <i id="back" class="fas fa-arrow-left"></i>
+        <div class="profile">
+            <div id="avatar">
+                <img src="/assets/def_avatar.png" alt="Avatar">
+                <p>Change</p>
+            </div>
+            <p>thorvaldemar</p>
+        </div>
+    </header>
+    
+    <svg width="0" height="0">
+        <defs>
+            <clipPath id="wave" clipPathUnits="objectBoundingBox">
+                <path class="st0" d="M 0 0 V 1 C 0.4 0.6 0.7 1.15 1 0.8 V 0 Z" />
+            </clipPath>
+        </defs>
+    </svg>
+
+    <div class="settings">
+        <button class="spotify">Connect spotify</button>
+
+        <h3>Change password:</h3>
+        <form class="changepassword">
+            <input type="password" placeholder="Current password" name="password" id="password">
+            <input type="password" placeholder="New password" name="newpassword" id="newpassword">
+            <button type="submit">Change password</button>
+        </form>
+
+        <h3>Change theme:</h3>
+        <form class="theme">
+            <button theme="dark" style="background-color: #252525"></button>
+            <button theme="light" style="background-color: #eee"></button>
+        </form>
+    </div>
+</body>
+</html>

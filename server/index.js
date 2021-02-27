@@ -49,6 +49,11 @@ router.get('/home', (req, res) => {
     else res.sendFile(__app + '/pages/home/index.html');
 });
 
+router.get('/profile', (req, res) => {
+    if (!req.session.uid) res.redirect('/login');
+    else res.sendFile(__app + '/pages/profile/index.html');
+});
+
 router.post('/login/:username/:password', (req, res) => {
     var {username, password} = req.params;
     con.query(`SELECT password, uid, country FROM users WHERE username='${username}' OR mail='${username}'`, (err, resault, fields) => {
@@ -91,6 +96,32 @@ router.post('/register/:username/:password/:mail/:country', (req, res) => {
             res.send({success: true});
         });
     });
+});
+
+router.post('/changepassword/:oldpassword/:newpassword', (req, res) => {
+    if (req.session.uid) {
+        var {oldpassword, newpassword} = req.params;
+        con.query(`SELECT password FROM users WHERE uid=${req.session.uid}`, (err, resault, fields) => {
+            if (resault.length > 0) {
+                var ext = resault[0];
+                checkPassword(oldpassword, ext['password'], correct => {
+                    if (correct) {
+                        createPassword(newpassword, hsh => {
+                            con.query(`UPDATE users SET password='${hsh}' WHERE uid=${req.session.uid}`, (err, resault) => {
+                                res.send({success: true});
+                            });
+                        });
+                    } else {
+                        res.send({success: false, reason: "Wrong password"});
+                    }
+                });
+            } else {
+                res.send({success: false, reason: "Unknown user"});
+            }
+        });
+    } else {
+        res.send({success: false, reason: "Not logged in"});
+    }
 });
 
 router.post('/getUserCountry', (req, res) => {
